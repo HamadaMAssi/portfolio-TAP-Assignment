@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>personal portfolio website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- I used nav inside header instead of just one of them so that the code would be easily editable when adding a logo to the site -->
+    <header id="header">
+      <nav class="links">
+        <ul class="main-nav">
+          <li>
+            <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-user"></i> About Me</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-phone"></i> Contact Me</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="content-container">
+      <section id="about">
+        <article>
+          <h1>Welcome to my site</h1>
+          <p class="specialization">
+            Hi, I'm Hamada, a web <span class="span-developer">Developer.</span>
+          </p>
+          <p class="description">
+            I am a creative web developer with a strong passion for crafting
+            exceptional websites and web applications. With a keen eye for
+            design and a knack for solving complex coding challenges, I bring
+            digital ideas to life by delivering user-friendly and responsive
+            solutions. <span class="see-more">See More. .</span>
+          </p>
+          <div class="buttons">
+            <button class="hire-me">Hire me !</button>
+            <button class="projects">See My Project</button>
+          </div>
+        </article>
+      </section>
+      <aside>
+        <div class="userImg"></div>
+      </aside>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

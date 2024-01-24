@@ -1,0 +1,324 @@
+/* Global Rules */
+:root {
+  --blue-color: #008aaa;
+  --lighter-blue-color: #3bbadb;
+  --orange-color: #d1884f;
+  --orange-hover-color: #d1874fe7;
+  --white-color: #fff;
+  --text-color: #222;
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set a font for the body */
+body {
+  font-family: var(--font-family);
+  background-color: var(--white-color);
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  padding: 20px 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: end;
+}
+
+nav ul li {
+  margin-left: 20px;
+  font-size: 0.95rem;
+}
+
+nav ul li i {
+  margin-right: 5px;
+  font-size: 0.95rem;
+}
+
+nav a {
+  color: var(--text-color);
+  display: block;
+  padding: 15px 0 15px 15px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.active {
+  color: var(--orange-color);
+}
+
+/* Add hover styles for navigation links */
+nav a:hover {
+  color: var(--orange-hover-color);
+}
+
+/* Create a container for the main content */
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Style the sections */
+section {
+  flex: 1;
+}
+
+/* Style the article <h1> */
+article h1 {
+  font-size: 1.2rem;
+  color: var(--lighter-blue-color);
+  font-weight: normal;
+}
+
+/* Style the article text */
+article .specialization {
+  font-size: 3rem;
+  color: var(--blue-color);
+  line-height: 1.6;
+  font-weight: bold;
+  margin: 40px 0;
+}
+
+article .description {
+  font-size: 1rem;
+  color: var(--text-color);
+  padding-bottom: 40px;
+}
+
+/* Style the  Developer*/
+article .span-developer {
+  color: var(--orange-color);
+}
+/* Style the span See more */
+article .see-more {
+  color: var(--lighter-blue-color);
+}
+
+/* Style the buttons */
+.buttons button {
+  padding: 5px 20px;
+  border: 1px solid var(--blue-color);
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buttons .hire-me {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  box-shadow: 1px 2px 5px var(--lighter-blue-color);
+}
+
+.buttons .projects {
+  background-color: var(--white-color);
+  color: var(--blue-color);
+  position: relative;
+  z-index: 1;
+  transition: var(0.3);
+  -webkit-transition: var(0.3);
+  -moz-transition: var(0.3);
+  -ms-transition: var(0.3);
+  -o-transition: var(0.3);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.projects::before,
+.projects::after {
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  background-color: var(--blue-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.projects::before {
+  left: 0px;
+}
+
+.projects::after {
+  right: 0px;
+}
+
+.projects:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+  -webkit-animation: left-move 0.5s linear forwards;
+}
+
+.projects:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+  -webkit-animation: right-move 0.5s linear forwards;
+}
+
+.projects:hover {
+  color: var(--white-color);
+  border-color: var(--white-color);
+  transition-delay: 0.5s;
+}
+
+.buttons button:hover {
+  filter: brightness(0.9);
+}
+
+/* Style the aside (image) */
+aside {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+aside .userImg {
+  display: block;
+  width: 300px;
+  height: 350px;
+  border-bottom-left-radius: 50%;
+  position: relative;
+  background-image: url("imgs/portfolio.jpg");
+  background-size: cover;
+}
+
+aside .userImg::before {
+  content: "";
+  background-color: var(--lighter-blue-color);
+  position: absolute;
+  left: -15px;
+  bottom: 0;
+  height: 95%;
+  width: 90%;
+  z-index: -1;
+  border-bottom-left-radius: 55%;
+  transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+}
+
+/* Medium (up to 992px width) */
+@media (max-width: 992px) {
+  body {
+    width: 85%;
+  }
+  article .specialization {
+    font-size: 2rem;
+  }
+  article .description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet styles (up to 768px width) */
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+  }
+  article .description {
+    font-size: 0.8em;
+  }
+  aside .userImg {
+    width: 250px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+  header {
+    box-shadow: 0px 0px 5px -1px #999;
+  }
+  header .links .main-nav {
+    justify-content: center;
+  }
+  header nav ul li {
+    margin: 0;
+  }
+  header nav ul li a {
+    font-size: 0.8rem;
+  }
+  .content-container {
+    width: 85%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  aside {
+    justify-content: center;
+    margin-top: 25px;
+  }
+  article .specialization {
+    font-size: 1.8rem;
+  }
+  aside .userImg,
+  aside .userImg::before {
+    border-radius: 10px 10px 10px 50%;
+    -webkit-border-radius: 10px 10px 10px 50%;
+    -moz-border-radius: 10px 10px 10px 50%;
+    -ms-border-radius: 10px 10px 10px 50%;
+    -o-border-radius: 10px 10px 10px 50%;
+  }
+  aside .userImg {
+    width: 200px;
+    height: 250px;
+  }
+}
+
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 5px;
+    width: 55%;
+    height: 100%;
+  }
+}
+
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 5px;
+    width: 55%;
+    height: 100%;
+  }
+}
